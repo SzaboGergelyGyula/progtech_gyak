@@ -55,7 +55,7 @@ public class LoginForm extends JDialog {
         btnClose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                System.exit(0);
             }
         });
 

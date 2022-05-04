@@ -8,6 +8,7 @@ public class ConstructPC extends JDialog{
     private JPanel constructPanel;
     private JButton btnLogout;
 
+    // ConstructPC konstruktor
     public ConstructPC(JFrame parent) {
         super(parent);
         setTitle("Számítógép összeállítása");
@@ -17,6 +18,7 @@ public class ConstructPC extends JDialog{
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
+        // Kijelentkezés gomb
         btnLogout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
