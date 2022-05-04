@@ -11,3 +11,6 @@ Egy olyan Java alkalmazás készítése, mellyel a felhasználó bejelentkezés 
 ## Tagok
 * Krigovszki Bálint - KDPEQ8
 * Szabó Gergely Gyula - C54C3Q
+
+## Feladatkövetés
+A feladatkövetés helye [Trello](https://trello.com/b/8mMdGNnp/beadando)
