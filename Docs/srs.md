@@ -37,8 +37,8 @@ A felhasználó bejelentkezés után be tudja vinni az adatokat, melyek alapján
 3: ram mennyiségének beállítása (megdjató GB-ban)
 4: tárhely mennyiségének kiválasztása (megadható GB-ban)
 5: videókártya kiválasztása (nem kötelező, legördülő menü)
-6: készítés indítása
-7: kész elemek listázása
+6: kész elemek listázása
+7: készítés indítása
 8: kilépés
 
 ## Fizikai környezet
