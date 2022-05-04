@@ -12,6 +12,7 @@ public class LoginForm extends JDialog {
     private JButton btnLogin;
     private JButton btnClose;
 
+    // LoginForm konstruktor
     public LoginForm(JFrame parent) {
         super(parent);
         setTitle("Bejelentkezés");
@@ -21,6 +22,7 @@ public class LoginForm extends JDialog {
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
+        // Bejelentkezés gomb
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -29,10 +31,17 @@ public class LoginForm extends JDialog {
 
                 user = getAuthenticatedUser(email, password);
 
+                // Sikeres bejelentkezés
                 if (user != null)
                 {
                     dispose();
+                    JOptionPane.showMessageDialog(LoginForm.this,
+                            "Sikeres bejelentkezés!",
+                            "Bejelentkezés",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    ConstructPC constructPC = new ConstructPC(null);
                 }
+                // Sikertelen bejelentkezés
                 else {
                     JOptionPane.showMessageDialog(LoginForm.this,
                             "E-mail cím vagy jelszó helytelen!",
@@ -41,6 +50,8 @@ public class LoginForm extends JDialog {
                 }
             }
         });
+
+        // Kilépés gomb
         btnClose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,14 +61,19 @@ public class LoginForm extends JDialog {
 
         setVisible(true);
     }
+
     public User user;
+
+    // User autentikáció
     private User getAuthenticatedUser(String email, String password) {
         User user = null;
 
+        // DB kapcsolat
         final String DB_URL = "jdbc:mysql://localhost/progtech_kdpeq8_c54c3q";
         final String USERNAME = "root";
         final String PASSWORD = "";
 
+        // Felhasználó adatainak lekérdezése
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
 
