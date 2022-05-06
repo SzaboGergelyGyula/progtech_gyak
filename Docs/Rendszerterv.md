@@ -23,23 +23,11 @@ A felhasználó bejelentkezés után be tudja vinni az adatokat, melyek alapján
 
 ## Funkcionális terv
 
-![login](login.jpg)
+![login](loginWindow.jpg)
 
-1: email cím megadása
-2: jelszó megadása
-3: bejelentkezés gomb
-4: rendszerből való kilépés
 
-![window](main_window.jpg)
+![window](mainWindow.jpg)
 
-1: típus kiválasztása (pc, laptop, telefon, tablet)
-2: processzor kiválasztása (legördülű listából)
-3: ram mennyiségének beállítása (megdjató GB-ban)
-4: tárhely mennyiségének kiválasztása (megadható GB-ban)
-5: videókártya kiválasztása (nem kötelező, legördülő menü)
-6: kész elemek listázása
-7: készítés indítása
-8: kilépés
 
 ## Fizikai környezet
 
