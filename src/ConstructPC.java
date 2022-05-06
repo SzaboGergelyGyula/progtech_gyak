@@ -12,11 +12,15 @@ public class ConstructPC extends JDialog{
     private JComboBox cbComputerType;
     private JTextField tfRAM;
     private JTextField tfStorage;
-    private JLabel lblLastPC;
+    private JLabel lblLastPCid;
     private JButton btnCreatePC;
     private JTextField tfCPU;
     private JTextField tfGPU;
     private JButton btnClear;
+    private JLabel lblLastCPU;
+    private JLabel lblLastRAM;
+    private JLabel lblLastStorage;
+    private JLabel lblLastGPU;
 
     // ConstructPC konstruktor
     public ConstructPC(JFrame parent) {
@@ -50,14 +54,31 @@ public class ConstructPC extends JDialog{
                 switch (cbComputerType.getSelectedItem().toString()){
                     case "Notebook":
                         Computer notebook = ComputerFactory.getComputer("Notebook");
-                        notebook.construct(CPU, RAM, Storage, GPU); break;
+                        notebook.construct(CPU, RAM, Storage, GPU);
+                        lblLastPCid.setText(notebook.toString());
+                        lblLastCPU.setText("Processzor: "+CPU);
+                        lblLastRAM.setText("Memória: "+RAM);
+                        lblLastStorage.setText("Tárhely: "+Storage);
+                        lblLastGPU.setText("Grafikus kártya: "+GPU);
+                        break;
                     case "PC":
                         Computer pc = ComputerFactory.getComputer("PC");
-                        pc.construct(CPU, RAM, Storage, GPU); break;
+                        pc.construct(CPU, RAM, Storage, GPU);
+                        lblLastPCid.setText(pc.toString());
+                        lblLastCPU.setText("Processzor: "+CPU);
+                        lblLastRAM.setText("Memória: "+RAM);
+                        lblLastStorage.setText("Tárhely: "+Storage);
+                        lblLastGPU.setText("Grafikus kártya: "+GPU);
+                        break;
                     case "Szerver":
                         Computer server = ComputerFactory.getComputer("Server");
                         server.construct(CPU, RAM, Storage, GPU);
-                    break;
+                        lblLastPCid.setText(server.toString());
+                        lblLastCPU.setText("Processzor: "+CPU);
+                        lblLastRAM.setText("Memória: "+RAM);
+                        lblLastStorage.setText("Tárhely: "+Storage);
+                        lblLastGPU.setText("Grafikus kártya: "+GPU);
+                        break;
                 }
             }
         });
