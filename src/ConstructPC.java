@@ -6,6 +6,13 @@ import java.awt.event.ItemListener;
 
 public class ConstructPC extends JDialog{
 
+    DefaultListModel DLM = new DefaultListModel();
+
+    private void addToList(String builtComputer) {
+        listComputersBuilt.setModel(DLM);
+        DLM.addElement(builtComputer);
+    }
+
     private JPanel constructPanel;
     private JButton btnLogout;
     private JList listComputersBuilt;
@@ -51,6 +58,7 @@ public class ConstructPC extends JDialog{
                 String RAM = tfRAM.getText();
                 String Storage = tfStorage.getText();
                 String GPU = tfGPU.getText();
+                String computerType = cbComputerType.getSelectedItem().toString();
                 switch (cbComputerType.getSelectedItem().toString()){
                     case "Notebook":
                         Computer notebook = ComputerFactory.getComputer("Notebook");
@@ -72,6 +80,8 @@ public class ConstructPC extends JDialog{
                 lblLastRAM.setText("Memória: "+RAM);
                 lblLastStorage.setText("Tárhely: "+Storage);
                 lblLastGPU.setText("Grafikus kártya: "+GPU);
+                String builtComputer = computerType +" "+ CPU +" "+ RAM +" "+ Storage +" "+ GPU;
+                addToList(builtComputer);
             }
         });
         btnClear.addActionListener(new ActionListener() {

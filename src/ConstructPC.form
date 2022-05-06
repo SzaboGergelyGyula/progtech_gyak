@@ -333,6 +333,7 @@
               <enabled value="true"/>
               <font name="Calibri" size="12"/>
               <foreground color="-16777216"/>
+              <model/>
             </properties>
           </component>
         </children>
