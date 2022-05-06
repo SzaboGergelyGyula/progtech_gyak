@@ -56,30 +56,22 @@ public class ConstructPC extends JDialog{
                         Computer notebook = ComputerFactory.getComputer("Notebook");
                         notebook.construct(CPU, RAM, Storage, GPU);
                         lblLastPCid.setText(notebook.toString());
-                        lblLastCPU.setText("Processzor: "+CPU);
-                        lblLastRAM.setText("Memória: "+RAM);
-                        lblLastStorage.setText("Tárhely: "+Storage);
-                        lblLastGPU.setText("Grafikus kártya: "+GPU);
                         break;
                     case "PC":
                         Computer pc = ComputerFactory.getComputer("PC");
                         pc.construct(CPU, RAM, Storage, GPU);
                         lblLastPCid.setText(pc.toString());
-                        lblLastCPU.setText("Processzor: "+CPU);
-                        lblLastRAM.setText("Memória: "+RAM);
-                        lblLastStorage.setText("Tárhely: "+Storage);
-                        lblLastGPU.setText("Grafikus kártya: "+GPU);
                         break;
                     case "Szerver":
                         Computer server = ComputerFactory.getComputer("Server");
                         server.construct(CPU, RAM, Storage, GPU);
                         lblLastPCid.setText(server.toString());
-                        lblLastCPU.setText("Processzor: "+CPU);
-                        lblLastRAM.setText("Memória: "+RAM);
-                        lblLastStorage.setText("Tárhely: "+Storage);
-                        lblLastGPU.setText("Grafikus kártya: "+GPU);
                         break;
                 }
+                lblLastCPU.setText("Processzor: "+CPU);
+                lblLastRAM.setText("Memória: "+RAM);
+                lblLastStorage.setText("Tárhely: "+Storage);
+                lblLastGPU.setText("Grafikus kártya: "+GPU);
             }
         });
         btnClear.addActionListener(new ActionListener() {
