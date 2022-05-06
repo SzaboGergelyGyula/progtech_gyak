@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public enum computerType {
+public enum ComputerType {
+    PC,
+    Szerver,
+    Notebook
 }
