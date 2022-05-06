@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.StandardSocketOptions;
 import java.sql.*;
 
 public class LoginForm extends JDialog {
@@ -106,8 +105,8 @@ public class LoginForm extends JDialog {
         LoginForm loginForm = new LoginForm(null);
         User user = loginForm.user;
         if (user != null) {
-            System.out.println("Sikeres bejelentkezés: "+user.username);
-            System.out.println("E-mail: "+user.email);
+            System.out.println("Sikeres bejelentkezés: "+user.email);
+            //System.out.println("E-mail: "+user.email);
         } else {
             System.out.println("Bejelentkezés megszakítva");
         }
