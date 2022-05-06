@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 public class ConstructPC extends JDialog{
@@ -17,6 +16,7 @@ public class ConstructPC extends JDialog{
     private JButton btnCreatePC;
     private JTextField tfCPU;
     private JTextField tfGPU;
+    private JButton btnClear;
 
     // ConstructPC konstruktor
     public ConstructPC(JFrame parent) {
@@ -42,19 +42,32 @@ public class ConstructPC extends JDialog{
         btnCreatePC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(cbComputerType.getSelectedItem().toString());
-                if (cbComputerType.getSelectedItem().toString() == "Notebook") {
-
-                    System.out.println("Notebook selected");
-                    String computerType = cbComputerType.getSelectedItem().toString();
-                    String CPU = tfCPU.getText();
-                    String RAM = tfRAM.getText();
-                    String Storage = tfStorage.getText();
-                    String GPU = tfGPU.getText();
-                    //System.out.println(computerType + " " + CPU + " " + RAM + " " + Storage + " " + GPU);
-
-
+                //System.out.println(cbComputerType.getSelectedItem().toString()+" in combobox selected");
+                String CPU = tfCPU.getText();
+                String RAM = tfRAM.getText();
+                String Storage = tfStorage.getText();
+                String GPU = tfGPU.getText();
+                switch (cbComputerType.getSelectedItem().toString()){
+                    case "Notebook":
+                        Computer notebook = ComputerFactory.getComputer("Notebook");
+                        notebook.construct(CPU, RAM, Storage, GPU); break;
+                    case "PC":
+                        Computer pc = ComputerFactory.getComputer("PC");
+                        pc.construct(CPU, RAM, Storage, GPU); break;
+                    case "Szerver":
+                        Computer server = ComputerFactory.getComputer("Server");
+                        server.construct(CPU, RAM, Storage, GPU);
+                    break;
                 }
+            }
+        });
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfCPU.setText("");
+                tfRAM.setText("");
+                tfStorage.setText("");
+                tfGPU.setText("");
             }
         });
         setVisible(true);
